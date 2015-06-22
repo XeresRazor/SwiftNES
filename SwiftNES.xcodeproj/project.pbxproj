@@ -1,0 +1,457 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3208A3D91B1E9A1200CBEEA2 /* Draw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3208A3D81B1E9A1200CBEEA2 /* Draw.swift */; };
+		3237D82A1B1697870006F5B2 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3237D8291B1697870006F5B2 /* Font.swift */; };
+		3237D82F1B16E3D00006F5B2 /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3237D82E1B16E3D00006F5B2 /* String+MD5.swift */; };
+		3242E1F11B1E8ECB008133E5 /* Names.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3242E1F01B1E8ECB008133E5 /* Names.swift */; };
+		3329CB9E1B1E2E9A0033142D /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3329CB9D1B1E2E9A0033142D /* Image.swift */; };
+		3329CBA01B1E2EE50033142D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3329CB9F1B1E2EE50033142D /* Color.swift */; };
+		3329CBA21B1E35440033142D /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3329CBA11B1E35440033142D /* Geometry.swift */; };
+		3329CBB81B20A0F30033142D /* io.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3329CBB71B20A0F30033142D /* io.swift */; };
+		3329CBBE1B20B7320033142D /* Hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3329CBBD1B20B7320033142D /* Hash.swift */; };
+		3329CBC11B20C3ED0033142D /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3329CBC01B20C3ED0033142D /* Error.swift */; };
+		333BB9151B223187009CA47C /* stb_image.c in Sources */ = {isa = PBXBuildFile; fileRef = 333BB9141B223187009CA47C /* stb_image.c */; };
+		33D52B861B16349500DF93AB /* Director.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D52B851B16349500DF93AB /* Director.swift */; };
+		33D52B881B163B8D00DF93AB /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D52B871B163B8D00DF93AB /* MenuView.swift */; };
+		33D52B8A1B163CC700DF93AB /* Texture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D52B891B163CC700DF93AB /* Texture.swift */; };
+		33D52B921B1658D500DF93AB /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D52B911B1658D500DF93AB /* Util.swift */; };
+		33D52B951B1658E100DF93AB /* EBChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 33D52B941B1658E100DF93AB /* EBChannel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		33D784CF1B066F2D00451239 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D784CE1B066F2D00451239 /* main.swift */; };
+		33D784D81B067D6B00451239 /* ui.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D784D71B067D6B00451239 /* ui.swift */; };
+		33D784DA1B067EFC00451239 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33D784D91B067EFC00451239 /* Cocoa.framework */; };
+		33D8C8831B162C44009302B3 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33D8C8821B162C44009302B3 /* OpenGL.framework */; };
+		33D8C8851B162C49009302B3 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33D8C8841B162C49009302B3 /* CoreVideo.framework */; };
+		33D8C8871B162C4D009302B3 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33D8C8861B162C4D009302B3 /* IOKit.framework */; };
+		33D8C8891B162C59009302B3 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33D8C8881B162C59009302B3 /* libglfw3.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		33D784C91B066F2D00451239 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3208A3D81B1E9A1200CBEEA2 /* Draw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Draw.swift; sourceTree = "<group>"; };
+		3237D8291B1697870006F5B2 /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		3237D82E1B16E3D00006F5B2 /* String+MD5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+MD5.swift"; sourceTree = "<group>"; };
+		3242E1F01B1E8ECB008133E5 /* Names.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Names.swift; sourceTree = "<group>"; };
+		3329CB9D1B1E2E9A0033142D /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		3329CB9F1B1E2EE50033142D /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		3329CBA11B1E35440033142D /* Geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
+		3329CBB71B20A0F30033142D /* io.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = io.swift; sourceTree = "<group>"; };
+		3329CBBA1B20B6BB0033142D /* Reader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reader.swift; sourceTree = "<group>"; };
+		3329CBBD1B20B7320033142D /* Hash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hash.swift; sourceTree = "<group>"; };
+		3329CBC01B20C3ED0033142D /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		333BB9131B223178009CA47C /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
+		333BB9141B223187009CA47C /* stb_image.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = stb_image.c; sourceTree = "<group>"; };
+		33D52B851B16349500DF93AB /* Director.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Director.swift; sourceTree = "<group>"; };
+		33D52B871B163B8D00DF93AB /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		33D52B891B163CC700DF93AB /* Texture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Texture.swift; sourceTree = "<group>"; };
+		33D52B911B1658D500DF93AB /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		33D52B931B1658E100DF93AB /* EBChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBChannel.h; sourceTree = "<group>"; };
+		33D52B941B1658E100DF93AB /* EBChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBChannel.m; sourceTree = "<group>"; };
+		33D784CB1B066F2D00451239 /* SwiftNES */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftNES; sourceTree = BUILT_PRODUCTS_DIR; };
+		33D784CE1B066F2D00451239 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		33D784D71B067D6B00451239 /* ui.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ui.swift; sourceTree = "<group>"; };
+		33D784D91B067EFC00451239 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		33D8C8821B162C44009302B3 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		33D8C8841B162C49009302B3 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		33D8C8861B162C4D009302B3 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		33D8C8881B162C59009302B3 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = dependencies/glfw/build/src/libglfw3.a; sourceTree = "<group>"; };
+		33D8C88A1B162DBA009302B3 /* SwiftNES-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftNES-Bridging-Header.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		33D784C81B066F2D00451239 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33D8C8891B162C59009302B3 /* libglfw3.a in Frameworks */,
+				33D8C8871B162C4D009302B3 /* IOKit.framework in Frameworks */,
+				33D8C8851B162C49009302B3 /* CoreVideo.framework in Frameworks */,
+				33D8C8831B162C44009302B3 /* OpenGL.framework in Frameworks */,
+				33D784DA1B067EFC00451239 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3329CB9B1B1E25F30033142D /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				3329CBB91B20B30E0033142D /* png */,
+				3329CB9C1B1E26400033142D /* Color */,
+				3329CB9D1B1E2E9A0033142D /* Image.swift */,
+				3329CBA11B1E35440033142D /* Geometry.swift */,
+				3242E1F01B1E8ECB008133E5 /* Names.swift */,
+				3208A3D81B1E9A1200CBEEA2 /* Draw.swift */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		3329CB9C1B1E26400033142D /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				3329CB9F1B1E2EE50033142D /* Color.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		3329CBB61B20A0DE0033142D /* io */ = {
+			isa = PBXGroup;
+			children = (
+				3329CBB71B20A0F30033142D /* io.swift */,
+			);
+			path = io;
+			sourceTree = "<group>";
+		};
+		3329CBB91B20B30E0033142D /* png */ = {
+			isa = PBXGroup;
+			children = (
+				3329CBBA1B20B6BB0033142D /* Reader.swift */,
+			);
+			path = png;
+			sourceTree = "<group>";
+		};
+		3329CBBC1B20B7270033142D /* Hash */ = {
+			isa = PBXGroup;
+			children = (
+				3329CBBD1B20B7320033142D /* Hash.swift */,
+			);
+			path = Hash;
+			sourceTree = "<group>";
+		};
+		3329CBBF1B20C3E80033142D /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				3329CBC01B20C3ED0033142D /* Error.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		33D52B8B1B1656BF00DF93AB /* util */ = {
+			isa = PBXGroup;
+			children = (
+				333BB9131B223178009CA47C /* stb_image.h */,
+				333BB9141B223187009CA47C /* stb_image.c */,
+				3329CBBF1B20C3E80033142D /* Error */,
+				3329CBBC1B20B7270033142D /* Hash */,
+				3329CBB61B20A0DE0033142D /* io */,
+				3329CB9B1B1E25F30033142D /* Image */,
+				33D52B931B1658E100DF93AB /* EBChannel.h */,
+				33D52B941B1658E100DF93AB /* EBChannel.m */,
+				3237D82E1B16E3D00006F5B2 /* String+MD5.swift */,
+			);
+			name = util;
+			path = SwiftNES/util;
+			sourceTree = "<group>";
+		};
+		33D784C21B066F2D00451239 = {
+			isa = PBXGroup;
+			children = (
+				33D784CD1B066F2D00451239 /* SwiftNES */,
+				33D52B8B1B1656BF00DF93AB /* util */,
+				33D8C8811B162C32009302B3 /* Frameworks */,
+				33D784CC1B066F2D00451239 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		33D784CC1B066F2D00451239 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				33D784CB1B066F2D00451239 /* SwiftNES */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		33D784CD1B066F2D00451239 /* SwiftNES */ = {
+			isa = PBXGroup;
+			children = (
+				33D8C88A1B162DBA009302B3 /* SwiftNES-Bridging-Header.h */,
+				33D784CE1B066F2D00451239 /* main.swift */,
+				33D784D51B067CF600451239 /* nes */,
+				33D784D61B067CF600451239 /* ui */,
+			);
+			path = SwiftNES;
+			sourceTree = "<group>";
+		};
+		33D784D51B067CF600451239 /* nes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = nes;
+			sourceTree = "<group>";
+		};
+		33D784D61B067CF600451239 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				33D784D71B067D6B00451239 /* ui.swift */,
+				33D52B851B16349500DF93AB /* Director.swift */,
+				33D52B871B163B8D00DF93AB /* MenuView.swift */,
+				33D52B891B163CC700DF93AB /* Texture.swift */,
+				33D52B911B1658D500DF93AB /* Util.swift */,
+				3237D8291B1697870006F5B2 /* Font.swift */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		33D8C8811B162C32009302B3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				33D8C8881B162C59009302B3 /* libglfw3.a */,
+				33D8C8861B162C4D009302B3 /* IOKit.framework */,
+				33D8C8841B162C49009302B3 /* CoreVideo.framework */,
+				33D8C8821B162C44009302B3 /* OpenGL.framework */,
+				33D784D91B067EFC00451239 /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		33D784CA1B066F2D00451239 /* SwiftNES */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33D784D21B066F2D00451239 /* Build configuration list for PBXNativeTarget "SwiftNES" */;
+			buildPhases = (
+				33D8C8801B162BD6009302B3 /* ShellScript */,
+				33D784C71B066F2D00451239 /* Sources */,
+				33D784C81B066F2D00451239 /* Frameworks */,
+				33D784C91B066F2D00451239 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftNES;
+			productName = SwiftNES;
+			productReference = 33D784CB1B066F2D00451239 /* SwiftNES */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		33D784C31B066F2D00451239 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = DigitalWorlds;
+				TargetAttributes = {
+					33D784CA1B066F2D00451239 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 33D784C61B066F2D00451239 /* Build configuration list for PBXProject "SwiftNES" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 33D784C21B066F2D00451239;
+			productRefGroup = 33D784CC1B066F2D00451239 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				33D784CA1B066F2D00451239 /* SwiftNES */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		33D8C8801B162BD6009302B3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"$SRCROOT/dependencies/glfw/\"\nrm -rf build\nmkdir build\ncd build\n/usr/local/bin/cmake -DGLFW_BUILD_DOCS=OFF -DGLFW_BUILD_EXAMPLES=OFF -DGLFW_BUILD_TESTS=OFF -DGLFW_INSTALL=OFF ../\nmake";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		33D784C71B066F2D00451239 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33D784CF1B066F2D00451239 /* main.swift in Sources */,
+				3329CBA21B1E35440033142D /* Geometry.swift in Sources */,
+				3237D82F1B16E3D00006F5B2 /* String+MD5.swift in Sources */,
+				3329CBA01B1E2EE50033142D /* Color.swift in Sources */,
+				3329CBBE1B20B7320033142D /* Hash.swift in Sources */,
+				33D52B8A1B163CC700DF93AB /* Texture.swift in Sources */,
+				333BB9151B223187009CA47C /* stb_image.c in Sources */,
+				33D52B881B163B8D00DF93AB /* MenuView.swift in Sources */,
+				3242E1F11B1E8ECB008133E5 /* Names.swift in Sources */,
+				3329CBB81B20A0F30033142D /* io.swift in Sources */,
+				3208A3D91B1E9A1200CBEEA2 /* Draw.swift in Sources */,
+				33D52B921B1658D500DF93AB /* Util.swift in Sources */,
+				3237D82A1B1697870006F5B2 /* Font.swift in Sources */,
+				33D52B861B16349500DF93AB /* Director.swift in Sources */,
+				33D52B951B1658E100DF93AB /* EBChannel.m in Sources */,
+				33D784D81B067D6B00451239 /* ui.swift in Sources */,
+				3329CBC11B20C3ED0033142D /* Error.swift in Sources */,
+				3329CB9E1B1E2E9A0033142D /* Image.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		33D784D01B066F2D00451239 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		33D784D11B066F2D00451239 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		33D784D31B066F2D00451239 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/dependencies/glfw/build/src",
+					"$(SDKROOT)/usr/lib/system",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftNES/SwiftNES-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/dependencies/glfw/include";
+			};
+			name = Debug;
+		};
+		33D784D41B066F2D00451239 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/dependencies/glfw/build/src",
+					"$(SDKROOT)/usr/lib/system",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftNES/SwiftNES-Bridging-Header.h";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/dependencies/glfw/include";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		33D784C61B066F2D00451239 /* Build configuration list for PBXProject "SwiftNES" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33D784D01B066F2D00451239 /* Debug */,
+				33D784D11B066F2D00451239 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		33D784D21B066F2D00451239 /* Build configuration list for PBXNativeTarget "SwiftNES" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33D784D31B066F2D00451239 /* Debug */,
+				33D784D41B066F2D00451239 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 33D784C31B066F2D00451239 /* Project object */;
+}
