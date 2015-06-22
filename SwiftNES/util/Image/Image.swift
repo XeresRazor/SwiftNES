@@ -48,7 +48,7 @@ class RGBAImage: Image {
     convenience init(pngData: [UInt8]) {
         let pngImage = NSImage(data: NSData(bytes: pngData, length: pngData.count))
         if let image = pngImage {
-            let imageRep = image.representations[0] as! NSImageRep
+            let imageRep = image.representations[0] as NSImageRep
             let width = Int(imageRep.pixelsWide)
             let height = Int(imageRep.pixelsHigh)
             
@@ -57,7 +57,7 @@ class RGBAImage: Image {
                 return
             }
             
-            var rep = NSBitmapImageRep(bitmapDataPlanes: nil,
+            let rep = NSBitmapImageRep(bitmapDataPlanes: nil,
                 pixelsWide: width,
                 pixelsHigh: height,
                 bitsPerSample: 8,
@@ -84,8 +84,8 @@ class RGBAImage: Image {
                     self.Set(x, y, c: color)
                 }
             }
-            let bitmap = bitmapFromImage(self)
-            println()
+//            let bitmap = bitmapFromImage(self)
+//            print("")
         } else {
             self.init()
         }

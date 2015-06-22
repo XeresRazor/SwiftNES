@@ -121,5 +121,5 @@ func ReadAtLeast(r: Reader, buf:ByteArray, min: Int) -> (Int, Error?) {
 }
 
 func ReadFull(r: Reader, buf: ByteArray) -> (Int, Error?) {
-    return ReadAtLeast(r, buf, buf.count)
+    return ReadAtLeast(r, buf: buf, min: buf.count)
 }

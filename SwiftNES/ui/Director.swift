@@ -52,7 +52,7 @@ class Director {
     
     func start(paths: [String]) {
         self.menuView = MenuView(director: self, paths: paths)
-        if count(paths) == 1 {
+        if paths.count == 1 {
             self.playGame(paths[0])
         } else {
             self.showMenu()

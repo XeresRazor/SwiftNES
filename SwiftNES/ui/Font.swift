@@ -33,11 +33,11 @@ func initFontMask() -> AlphaImage {
 func createGenericThumbnail(text: String) -> RGBAImage {
     let im = RGBAImage(r: Rectangle(0, 0, 256, 240))
     
-    Draw(im, im.Rect, UniformImage(c: BlackColor), ZP, .Src)
+    Draw(im, r: im.Rect, src: UniformImage(c: BlackColor), sp: ZP, op: .Src)
 //    var map = bitmapFromImage(im)
-    drawCenteredText(im, text, 1, 2, RGBAColor(128, 128, 128, 255))
+    drawCenteredText(im, text: text, dx: 1, dy: 2, color: RGBAColor(128, 128, 128, 255))
 //    map = bitmapFromImage(im)
-    drawCenteredText(im, text, 0, 0, WhiteColor)
+    drawCenteredText(im, text: text, dx: 0, dy: 0, color: WhiteColor)
 //    map = bitmapFromImage(im)
     
     return im
@@ -48,11 +48,11 @@ func bitmapFromImage(image: Image) -> NSBitmapImageRep {
         let w = im.Rect.Size().X
         let h = im.Rect.Size().Y
         
-        var bitmap = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: w, pixelsHigh: h, bitsPerSample: 8, samplesPerPixel: 4, hasAlpha: true, isPlanar: false, colorSpaceName: NSCalibratedRGBColorSpace, bytesPerRow: w * 4, bitsPerPixel: 32)
+        let bitmap = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: w, pixelsHigh: h, bitsPerSample: 8, samplesPerPixel: 4, hasAlpha: true, isPlanar: false, colorSpaceName: NSCalibratedRGBColorSpace, bytesPerRow: w * 4, bitsPerPixel: 32)
         
         for var y = 0; y < h; y++ {
             for var x = 0; x < w; x++ {
-                var col = image.At(x, y)
+                let col = image.At(x, y)
                 var color = [Int(col.RGBA().r), Int(col.RGBA().g), Int(col.RGBA().b), Int(col.RGBA().a)]
                 bitmap!.setPixel(&color, atX: x, y: y)
             }
@@ -62,13 +62,13 @@ func bitmapFromImage(image: Image) -> NSBitmapImageRep {
         let w = im.Rect.Size().X
         let h = im.Rect.Size().Y
         
-        var pixels = UnsafeMutablePointer<UInt8>(im.Pix)
-        var pixelPointer = UnsafeMutablePointer<UnsafeMutablePointer<UInt8>>([pixels])
-        var bitmap = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: w, pixelsHigh: h, bitsPerSample: 8, samplesPerPixel: 4, hasAlpha: true, isPlanar: false, colorSpaceName: NSCalibratedRGBColorSpace, bytesPerRow: w * 4, bitsPerPixel: 32)
+//        let pixels = UnsafeMutablePointer<UInt8>(im.Pix)
+        
+        let bitmap = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: w, pixelsHigh: h, bitsPerSample: 8, samplesPerPixel: 4, hasAlpha: true, isPlanar: false, colorSpaceName: NSCalibratedRGBColorSpace, bytesPerRow: w * 4, bitsPerPixel: 32)
         
         for var y = 0; y < h; y++ {
             for var x = 0; x < w; x++ {
-                var col = image.At(x, y)
+                let col = image.At(x, y)
                 var color = [Int(col.RGBA().r), Int(col.RGBA().g), Int(col.RGBA().b), Int(col.RGBA().a)]
                 bitmap!.setPixel(&color, atX: x, y: y)
             }
@@ -81,15 +81,15 @@ func bitmapFromImage(image: Image) -> NSBitmapImageRep {
 func wordWrap(text: String, maxLength: Int) -> [String] {
     var rows = [String]()
     let words = text.componentsSeparatedByCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
-    if count(words) == 0 {
+    if words.count == 0 {
         return rows
     }
     
     var row = words[0]
-    for var i = 1; i < count(words); i++ {
+    for var i = 1; i < words.count; i++ {
         let word = words[i]
         let newRow = row + " " + word
-        if count(newRow)  <= maxLength {
+        if newRow.characters.count  <= maxLength {
             row = newRow
         } else {
             rows.append(row)
@@ -101,11 +101,11 @@ func wordWrap(text: String, maxLength: Int) -> [String] {
 }
 
 func drawCenteredText(dest: Image, text: String, dx: Int, dy: Int, color: Color) {
-    let rows = wordWrap(text, 15)
-    for (i, row) in enumerate(rows) {
-        let x = 128 - count(row) * 8
-        let y = 120 - count(rows) * 12 + i * 24
-        drawText(dest, x + dx, y + dy, row, color)
+    let rows = wordWrap(text, maxLength: 15)
+    for (i, row) in rows.enumerate() {
+        let x = 128 - row.characters.count * 8
+        let y = 120 - rows.count * 12 + i * 24
+        drawText(dest, x: x + dx, y: y + dy, text: row, color: color)
 //        var map = bitmapFromImage(dest)
 //        println()
     }
@@ -119,32 +119,32 @@ func drawCharacter(dest: Image, x: Int, y: Int, character: CChar, color: Color) 
     let cx = Int((ch - 32) % 16) * 16
     let cy = Int((ch - 32) / 16) * 16
     let r = Rectangle(x, y, x + 16, y + 16)
-//    let src = UniformImage(c: color)
+    let src = UniformImage(c: color)
     let sp = Point(cx, cy)
 
-    var maskmap = bitmapFromImage(fontMask)
+//    var maskmap = bitmapFromImage(fontMask)
     
     for var offY = 0; offY < 16; offY++ {
         for var offX = 0; offX < 16; offX++ {
             let maskColor = fontMask.At(cx + offX, cy + offY)
             if (maskColor.RGBA().a >> 8) > 128 {
                 dest.Set(x + offX, y + offY, c: color)
-                var bitmap = bitmapFromImage(dest)
-                var z = 0
+//                var bitmap = bitmapFromImage(dest)
+//                var z = 0
             }
         }
     }
     
-    //DrawMask(dest, r, src, sp, fontMask, sp, Op.Over)
-    var map = bitmapFromImage(dest)
-    println()
+    DrawMask(dest, r: r, src: src, sp: sp, mask: fontMask, mp: sp, op: Op.Over)
+//    var map = bitmapFromImage(dest)
+    print("")
 }
 
 func drawText(dest: Image, var x: Int, y: Int, text: String, color: Color) {
     let newText = text.cStringUsingEncoding(NSUTF8StringEncoding)
     if newText != nil {
-        for var i = 0; i < count(text); i++ {
-            drawCharacter(dest, x, y, newText![i], color)
+        for var i = 0; i < text.characters.count; i++ {
+            drawCharacter(dest, x: x, y: y, character: newText![i], color: color)
 //            var map = bitmapFromImage(dest)
             x += 16
         }

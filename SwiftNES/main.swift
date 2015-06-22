@@ -28,15 +28,16 @@ func paths() ->[String]
         if isDir
         {
             var result = [String]()
-            if let files = NSFileManager().contentsOfDirectoryAtPath(arg, error: nil)
-            {
+            do {
+                let files = try NSFileManager().contentsOfDirectoryAtPath(arg)
                 for file in files
                 {
                     if file.pathExtension == "nes"
                     {
-                        result.append(arg.stringByAppendingPathComponent(file as! String))
+                        result.append(arg.stringByAppendingPathComponent(file as String))
                     }
                 }
+            } catch _ {
             }
             return result
         }
@@ -50,7 +51,7 @@ func paths() ->[String]
 
 //  Main()
 let filePaths = paths()
-if count(filePaths) == 0
+if filePaths.count == 0
 {
     fatalError("No rom files specified or found")
 }

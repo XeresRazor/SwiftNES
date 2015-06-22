@@ -22,7 +22,7 @@ class Texture {
     var ch: EBChannel = EBChannel(bufferCapacity: 1024)
     
     init() {
-        var texture = createTexture()
+        let texture = createTexture()
         glBindTexture(GLenum(GL_TEXTURE_2D), texture)
         glTexImage2D(GLenum(GL_TEXTURE_2D), GLint(0), GLint(GL_RGBA),
             GLsizei(textureSize), GLsizei(textureSize),
@@ -34,7 +34,7 @@ class Texture {
     func purge() {
         while true {
             var path: AnyObject?
-            var r = self.ch.tryRecv(&path)
+            let r = self.ch.tryRecv(&path)
             if r == .OK {
                 let pathString = path as! String
                 self.lookup.removeValueForKey(pathString)
@@ -68,7 +68,7 @@ class Texture {
     func lru() -> Int {
         var minIndex = 0
         var minValue = self.counter + 1
-        for (i, n) in enumerate(self.access) {
+        for (i, n) in self.access.enumerate() {
             if n < minValue{
                 minIndex = i
                 minValue = n

@@ -107,7 +107,7 @@ struct Alpha16Color: Color {
     }
     
     func RGBA() -> (r: UInt32, g: UInt32, b: UInt32, a: UInt32) {
-        var a = UInt32(self.A)
+        let a = UInt32(self.A)
         return (a, a, a, a)
     }
 }

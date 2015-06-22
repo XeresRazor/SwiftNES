@@ -45,11 +45,11 @@ private func processBackward(dst: Image, r: Rectangle, src: Image, sp: Point) ->
 }
 
 func Draw(dst: Image, r: Rectangle, src: Image, sp: Point, op: Op) {
-    DrawMask(dst, r, src, sp, nil, Point(), op)
+    DrawMask(dst, r: r, src: src, sp: sp, mask: nil, mp: Point(), op: op)
 }
 
 func DrawMask(dst: Image, var r: Rectangle, src: Image, var sp: Point, mask: Image?, var mp: Point, op: Op) {
-    clip(dst, &r, src, &sp, mask, &mp)
+    clip(dst, r: &r, src: src, sp: &sp, mask: mask, mp: &mp)
     if r.Empty() {
         return
     }
@@ -60,10 +60,10 @@ func DrawMask(dst: Image, var r: Rectangle, src: Image, var sp: Point, mask: Ima
             if mask == nil {
                 switch src {
                 case let src0 as UniformImage:
-                    drawFillOver(dst0, r, src0)
+                    drawFillOver(dst0, r: r, src: src0)
                     return
                 case let src0 as RGBAImage:
-                    drawCopyOver(dst0, r, src0, sp)
+                    drawCopyOver(dst0, r: r, src: src0, sp: sp)
                     return
                 default:
                     break
@@ -71,7 +71,7 @@ func DrawMask(dst: Image, var r: Rectangle, src: Image, var sp: Point, mask: Ima
             } else if let mask0 = mask as? AlphaImage {
                 switch src {
                 case let src0 as UniformImage:
-                    drawGlyphOver(dst0, r, src0, mask0, mp)
+                    drawGlyphOver(dst0, r: r, src: src0, mask: mask0, mp: mp)
                     return
                 default:
                     break
@@ -81,24 +81,24 @@ func DrawMask(dst: Image, var r: Rectangle, src: Image, var sp: Point, mask: Ima
             if mask == nil {
                 switch src {
                 case let src0 as UniformImage:
-                    drawFillSrc(dst0, r, src0)
+                    drawFillSrc(dst0, r: r, src: src0)
                     return
                 case let src0 as RGBAImage:
-                    drawCopySrc(dst0, r, src0, sp)
+                    drawCopySrc(dst0, r: r, src: src0, sp: sp)
                     return
                 default:
                     break
                 }
             }
         }
-        drawRGBA(dst0, r, src, sp, mask, mp, op)
+        drawRGBA(dst0, r: r, src: src, sp: sp, mask: mask, mp: mp, op: op)
         return
     default:
         break
     }
     var (x0, x1, dx) = (r.Min.X, r.Max.X, 1)
     var (y0, y1, dy) = (r.Min.Y, r.Max.Y, 1)
-    if processBackward(dst, r, src, sp) {
+    if processBackward(dst, r: r, src: src, sp: sp) {
         (x0, x1, dx) = (x1 - 1, x0 - 1, -1)
         (y0, y1, dy) = (y1 - 1, y0 - 1, -1)
     }
@@ -121,7 +121,7 @@ func DrawMask(dst: Image, var r: Rectangle, src: Image, var sp: Point, mask: Ima
                 } else {
                     dst.Set(x, y, c: TransparentColor)
                 }
-            case let _ where ma == m && op == .Src:
+            case  _ where ma == m && op == .Src:
                 dst.Set(x, y, c: src.At(sx, sy))
             default:
                 let (sr, sg, sb, sa) = src.At(sx, sy).RGBA()
@@ -146,7 +146,7 @@ func DrawMask(dst: Image, var r: Rectangle, src: Image, var sp: Point, mask: Ima
     
 }
 
-private func drawFillOver(var dst: RGBAImage, r: Rectangle, src: UniformImage) {
+private func drawFillOver(dst: RGBAImage, r: Rectangle, src: UniformImage) {
     let (sr, sg, sb, sa) = src.RGBA()
     let a = (m - sa) * 0x101
     var i0 = dst.PixOffset(r.Min.X, r.Min.Y)
@@ -173,7 +173,7 @@ private func drawFillOver(var dst: RGBAImage, r: Rectangle, src: UniformImage) {
     }
 }
 
-private func drawFillSrc(var dst: RGBAImage, r: Rectangle, src: UniformImage) {
+private func drawFillSrc(dst: RGBAImage, r: Rectangle, src: UniformImage) {
     let (sr, sg, sb, sa) = src.RGBA()
     var i0 = dst.PixOffset(r.Min.X, r.Min.Y)
     var i1 = i0 + r.Dx() * 4
@@ -194,7 +194,7 @@ private func drawFillSrc(var dst: RGBAImage, r: Rectangle, src: UniformImage) {
     }
 }
 
-private func drawCopyOver(var dst: RGBAImage, r: Rectangle, src: RGBAImage, sp: Point) {
+private func drawCopyOver(dst: RGBAImage, r: Rectangle, src: RGBAImage, sp: Point) {
     var dx = r.Dx(), dy = r.Dy()
     var d0 = dst.PixOffset(r.Min.X, r.Min.Y)
     var s0 = src.PixOffset(sp.X, sp.Y)
@@ -238,7 +238,7 @@ private func drawCopyOver(var dst: RGBAImage, r: Rectangle, src: RGBAImage, sp: 
     }
 }
 
-private func drawCopySrc(var dst: RGBAImage, r: Rectangle, src: RGBAImage, sp: Point) {
+private func drawCopySrc(dst: RGBAImage, r: Rectangle, src: RGBAImage, sp: Point) {
     var (n, dy) = (4 * r.Dx(), r.Dy())
     var d0 = dst.PixOffset(r.Min.X, r.Min.Y)
     var s0 = src.PixOffset(sp.X, sp.Y)
@@ -261,7 +261,7 @@ private func drawCopySrc(var dst: RGBAImage, r: Rectangle, src: RGBAImage, sp: P
     }
 }
 
-private func drawGlyphOver(var dst: RGBAImage, r: Rectangle, src: UniformImage, mask: AlphaImage, mp: Point) {
+private func drawGlyphOver(dst: RGBAImage, r: Rectangle, src: UniformImage, mask: AlphaImage, mp: Point) {
     var i0 = dst.PixOffset(r.Min.X, r.Min.Y)
     var i1 = i0 + r.Dx() * 4
     var mi0 = mask.PixOffset(mp.X, mp.Y)
@@ -302,6 +302,6 @@ private func drawGlyphOver(var dst: RGBAImage, r: Rectangle, src: UniformImage, 
     }
 }
 
-private func drawRGBA(var dst: RGBAImage, r: Rectangle, src: Image, sp: Point, mask: Image?, mp: Point, op: Op) {
-    println("drawRGBA not implemented!")
+private func drawRGBA(dst: RGBAImage, r: Rectangle, src: Image, sp: Point, mask: Image?, mp: Point, op: Op) {
+    print("drawRGBA not implemented!")
 }

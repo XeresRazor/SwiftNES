@@ -61,7 +61,7 @@ class MenuView : View {
         self.typeBuffer = self.typeBuffer! + String(char)
         self.typeBuffer = self.typeBuffer?.lowercaseString
         
-        for (index, p) in enumerate(self.paths) {
+        for (index, p) in self.paths.enumerate() {
             let path = p.lastPathComponent.lowercaseString
             if path.hasPrefix(self.typeBuffer!) {
                 self.highlight(index)

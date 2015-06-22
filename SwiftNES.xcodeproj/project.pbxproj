@@ -229,7 +229,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 33D784D21B066F2D00451239 /* Build configuration list for PBXNativeTarget "SwiftNES" */;
 			buildPhases = (
-				33D8C8801B162BD6009302B3 /* ShellScript */,
 				33D784C71B066F2D00451239 /* Sources */,
 				33D784C81B066F2D00451239 /* Frameworks */,
 				33D784C91B066F2D00451239 /* CopyFiles */,
@@ -249,7 +248,8 @@
 		33D784C31B066F2D00451239 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = DigitalWorlds;
 				TargetAttributes = {
 					33D784CA1B066F2D00451239 = {
@@ -273,22 +273,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		33D8C8801B162BD6009302B3 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "cd \"$SRCROOT/dependencies/glfw/\"\nrm -rf build\nmkdir build\ncd build\n/usr/local/bin/cmake -DGLFW_BUILD_DOCS=OFF -DGLFW_BUILD_EXAMPLES=OFF -DGLFW_BUILD_TESTS=OFF -DGLFW_INSTALL=OFF ../\nmake";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		33D784C71B066F2D00451239 /* Sources */ = {
@@ -339,6 +323,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -407,9 +392,10 @@
 					"$(PROJECT_DIR)/dependencies/glfw/build/src",
 					"$(SDKROOT)/usr/lib/system",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftNES/SwiftNES-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/dependencies/glfw/include";
 			};
 			name = Debug;
@@ -424,8 +410,10 @@
 					"$(PROJECT_DIR)/dependencies/glfw/build/src",
 					"$(SDKROOT)/usr/lib/system",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftNES/SwiftNES-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Ounchecked";
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/dependencies/glfw/include";
 			};
 			name = Release;
