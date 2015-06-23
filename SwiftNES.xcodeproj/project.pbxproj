@@ -17,7 +17,6 @@
 		3329CBB81B20A0F30033142D /* io.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3329CBB71B20A0F30033142D /* io.swift */; };
 		3329CBBE1B20B7320033142D /* Hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3329CBBD1B20B7320033142D /* Hash.swift */; };
 		3329CBC11B20C3ED0033142D /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3329CBC01B20C3ED0033142D /* Error.swift */; };
-		333BB9151B223187009CA47C /* stb_image.c in Sources */ = {isa = PBXBuildFile; fileRef = 333BB9141B223187009CA47C /* stb_image.c */; };
 		33D52B861B16349500DF93AB /* Director.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D52B851B16349500DF93AB /* Director.swift */; };
 		33D52B881B163B8D00DF93AB /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D52B871B163B8D00DF93AB /* MenuView.swift */; };
 		33D52B8A1B163CC700DF93AB /* Texture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D52B891B163CC700DF93AB /* Texture.swift */; };
@@ -56,8 +55,6 @@
 		3329CBBA1B20B6BB0033142D /* Reader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reader.swift; sourceTree = "<group>"; };
 		3329CBBD1B20B7320033142D /* Hash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hash.swift; sourceTree = "<group>"; };
 		3329CBC01B20C3ED0033142D /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
-		333BB9131B223178009CA47C /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
-		333BB9141B223187009CA47C /* stb_image.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = stb_image.c; sourceTree = "<group>"; };
 		33D52B851B16349500DF93AB /* Director.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Director.swift; sourceTree = "<group>"; };
 		33D52B871B163B8D00DF93AB /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		33D52B891B163CC700DF93AB /* Texture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Texture.swift; sourceTree = "<group>"; };
@@ -147,8 +144,6 @@
 		33D52B8B1B1656BF00DF93AB /* util */ = {
 			isa = PBXGroup;
 			children = (
-				333BB9131B223178009CA47C /* stb_image.h */,
-				333BB9141B223187009CA47C /* stb_image.c */,
 				3329CBBF1B20C3E80033142D /* Error */,
 				3329CBBC1B20B7270033142D /* Hash */,
 				3329CBB61B20A0DE0033142D /* io */,
@@ -285,7 +280,6 @@
 				3329CBA01B1E2EE50033142D /* Color.swift in Sources */,
 				3329CBBE1B20B7320033142D /* Hash.swift in Sources */,
 				33D52B8A1B163CC700DF93AB /* Texture.swift in Sources */,
-				333BB9151B223187009CA47C /* stb_image.c in Sources */,
 				33D52B881B163B8D00DF93AB /* MenuView.swift in Sources */,
 				3242E1F11B1E8ECB008133E5 /* Names.swift in Sources */,
 				3329CBB81B20A0F30033142D /* io.swift in Sources */,
@@ -395,7 +389,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftNES/SwiftNES-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/dependencies/glfw/include";
 			};
 			name = Debug;
@@ -413,7 +407,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftNES/SwiftNES-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Ounchecked";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/dependencies/glfw/include";
 			};
 			name = Release;

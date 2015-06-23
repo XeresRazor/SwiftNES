@@ -267,8 +267,6 @@ private func drawGlyphOver(dst: RGBAImage, r: Rectangle, src: UniformImage, mask
     var mi0 = mask.PixOffset(mp.X, mp.Y)
     let (sr, sg, sb, sa) = src.RGBA()
     
-//    var alphaMap = bitmapFromImage(mask)
-    
     for var y = r.Min.Y, my = mp.Y; y != r.Max.Y; y++, my++ {
         for var i = i0, mi = mi0; i < i1; i += 4, mi++ {
             var ma = UInt32(mask.Pix[mi])
@@ -293,9 +291,8 @@ private func drawGlyphOver(dst: RGBAImage, r: Rectangle, src: UniformImage, mask
             dst.Pix[i + 1] = UInt8(dstG)
             dst.Pix[i + 2] = UInt8(dstB)
             dst.Pix[i + 3] = UInt8(dstA)
-//            var map = bitmapFromImage(dst)
-//            map.samplesPerPixel
         }
+        
         i0 += dst.Stride
         i1 += dst.Stride
         mi0 += mask.Stride

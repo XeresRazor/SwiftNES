@@ -15,6 +15,30 @@ let initialDelay = 0.3
 let repeatDelay = 0.1
 let typeDelay = 0.5
 
+var menuView: MenuView? = nil
+
+func onChar(window: COpaquePointer, char: CUnsignedInt) {
+    guard let menu = menuView else {
+        return
+    }
+    let now = glfwGetTime()
+    if now > menu.typeTime {
+        menu.typeBuffer = ""
+    }
+    menu.typeTime = now + typeDelay
+    menu.typeBuffer = menu.typeBuffer! + String(Character(UnicodeScalar(char)))
+    menu.typeBuffer = menu.typeBuffer?.lowercaseString
+    
+    for (index, p) in menu.paths.enumerate() {
+        let path = p.lastPathComponent.lowercaseString
+        if path.hasPrefix(menu.typeBuffer!) {
+            menu.highlight(Int32(index))
+            return
+        }
+    }
+}
+
+
 class MenuView : View {
     var director: Director
     var paths: [String]
@@ -40,11 +64,11 @@ class MenuView : View {
         
     }
     
-    func onPress(index: Int) {
+    func onPress(index: Int32) {
         
     }
     
-    func onRelease(index: Int) {
+    func onRelease(index: Int32) {
         
     }
     
@@ -52,37 +76,24 @@ class MenuView : View {
         
     }
     
-    func onChar(window: COpaquePointer, char: Character) {
-        let now = glfwGetTime()
-        if now > self.typeTime {
-            self.typeBuffer = ""
-        }
-        self.typeTime = now + typeDelay
-        self.typeBuffer = self.typeBuffer! + String(char)
-        self.typeBuffer = self.typeBuffer?.lowercaseString
-        
-        for (index, p) in self.paths.enumerate() {
-            let path = p.lastPathComponent.lowercaseString
-            if path.hasPrefix(self.typeBuffer!) {
-                self.highlight(index)
-                return
-            }
-        }
-    }
-    
-    func highlight(index: Int) {
-        
+    func highlight(index: Int32) {
+        self.scroll = index / self.nx - (self.ny - 1) / 2
+        self.clampScroll(false)
+        self.i = index % self.nx
+        self.j = (index - self.i) / self.nx - self.scroll
     }
     
     func enter() {
         glClearColor(0.333, 0.333, 0.333, 1)
         self.director.setTitle("Select Game")
         //  TODO: Setup bridging via Obj-C
+        menuView = self
+        glfwSetCharCallback(self.director.window, onChar)
         //glfwSetCharCallback(self.director.window, nil)
     }
     
     func exit() {
-//        glfwSetCharCallback(self.director.window, nil)
+        glfwSetCharCallback(self.director.window, nil)
     }
     
     func update(timestamp: Float64, deltaTime: Float64) {

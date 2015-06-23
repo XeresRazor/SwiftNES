@@ -52,6 +52,9 @@ class RGBAImage: Image {
             let width = Int(imageRep.pixelsWide)
             let height = Int(imageRep.pixelsHigh)
             
+//            let width = Int(image.size.width)
+//            let height = Int(image.size.height)
+            
             if width < 1 || height < 1 {
                 self.init()
                 return
@@ -70,7 +73,9 @@ class RGBAImage: Image {
             let ctx = NSGraphicsContext(bitmapImageRep: rep)
             NSGraphicsContext.saveGraphicsState()
             NSGraphicsContext.setCurrentContext(ctx)
-            image.drawAtPoint(NSZeroPoint, fromRect: NSZeroRect, operation: .CompositeCopy, fraction: 1.0)
+            
+            image.drawInRect(NSMakeRect(0, 0, CGFloat(width), CGFloat(height)), fromRect: NSMakeRect(0, 0, image.size.width, image.size.height), operation: .CompositeCopy, fraction: 1.0)
+            //image.drawAtPoint(NSZeroPoint, fromRect: NSMakeRect(0, 0, CGFloat(width), CGFloat(height)), operation: .CompositeCopy, fraction: 1.0)
             ctx?.flushGraphics()
             NSGraphicsContext.restoreGraphicsState()
             
@@ -84,8 +89,6 @@ class RGBAImage: Image {
                     self.Set(x, y, c: color)
                 }
             }
-//            let bitmap = bitmapFromImage(self)
-//            print("")
         } else {
             self.init()
         }
@@ -108,6 +111,9 @@ class RGBAImage: Image {
             return RGBAColor()
         }
         let i = self.PixOffset(x, y)
+        if i > self.Pix.count {
+            fatalError()
+        }
         return RGBAColor(self.Pix[i + 0], self.Pix[i + 1], self.Pix[i + 2], self.Pix[i + 3])
     }
     

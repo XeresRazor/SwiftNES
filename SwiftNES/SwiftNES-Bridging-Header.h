@@ -5,4 +5,3 @@
 #import <CommonCrypto/CommonCrypto.h>
 #import "GLFW/glfw3.h"
 #import "EBChannel.h"
-#import "stb_image.h"
